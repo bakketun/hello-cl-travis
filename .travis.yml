@@ -1,0 +1,15 @@
+language: minimal
+
+
+env:
+  matrix:
+    - LISP=clisp
+    - LISP=ccl
+    - LISP=ecl
+    - LISP=sbcl
+
+install:
+  - curl -L https://github.com/luismbo/cl-travis/raw/master/install.sh | sh
+
+script:
+  - cl -e '(load "hello.lisp")'
